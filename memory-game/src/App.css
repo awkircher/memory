@@ -1,0 +1,4 @@
+.Gameboard {
+    display: flex;
+    flex-wrap: wrap;
+}
