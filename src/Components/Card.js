@@ -1,9 +1,17 @@
+import { useState } from 'react';
+
 function Card(props) {
-    return (
-      <div className="Card">
-        <img data-id={props.id} src={props.src} alt="" style={props.position} />
-      </div>
-    );
-  }
+  const [isClicked, setIsClicked] = useState(false);
+  return (
+    <div className="Card">
+      <img 
+        data-id={props.id} 
+        data-clicked={isClicked}
+        src={props.src} 
+        alt="" 
+        onClick={() => setIsClicked(true)} />
+    </div>
+  );
+}
   
   export default Card;
