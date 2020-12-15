@@ -5,8 +5,11 @@ body {
 }
 
 .Gameboard {
+    width: 87%;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .instructions {
