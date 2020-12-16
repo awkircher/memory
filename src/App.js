@@ -1,17 +1,18 @@
 import Data from './Components/Data';
 import Gameboard from './Components/Gameboard';
-import Score from './Components/Score';
 import { useState } from 'react';
 import './App.css';
 import Header from './Components/Header';
+import Message from './Components/Message'
 
 function App() {
   const [clicked, setClicked] = useState([]);
   const [score, setScore] = useState(0);
   const [pastScores, setPastScores] = useState([]);
   const [topScore, setTopScore] = useState(0);
+  const [win, setWin] = useState(false);
 
-  function shuffleArray(array) {
+  const shuffleArray = function(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
@@ -39,16 +40,22 @@ function App() {
       const dataIndex = cards.findIndex(isCard);
       setClicked([...clicked, cards[dataIndex]]);
       setScore(score + 1);
+      if ((score + 1) === 15) {
+        setWin(true);
+      }
     } else {
       setPastScores([...pastScores, score]);
       setTopScore(calculateTopScore())
       setScore(0);
       setClicked([]);
+      setWin(false);
     }
   }
 
   return (
     <div className="App">
+      <Message
+        win={win} />
       <Header 
         topScore={topScore}
         score={score} />
