@@ -4,6 +4,11 @@ body {
     color: #424242;
 }
 
+.Header {
+    font-family: 'Inconsolata';
+    display: flex;
+}
+
 .Gameboard {
     width: 87%;
     margin: auto;
@@ -12,6 +17,33 @@ body {
     justify-content: space-evenly;
 }
 
-.instructions {
+.Score {
+    font-family: 'Anton', 'Helvetica Neue Condensed', Arial, Helvetica, sans-serif;
+    font-size: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.Score .label {
     font-family: 'Inconsolata';
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.Score span {
+    width: 20px;
+    height: 8px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+}
+
+.Score #leftarrow {
+    background-image: url("./images/arrowleft.svg");
+}
+
+.Score #rightarrow {
+    background-image: url("./images/arrowright.svg");
+    background-position-x: right;
 }
