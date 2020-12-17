@@ -63,3 +63,17 @@ body {
     background-image: url("./images/arrowright.svg");
     background-position-x: right;
 }
+
+.Card {
+    box-sizing: border-box;
+}
+
+.Card img:hover {
+    box-shadow: -4px 4px 0px 0px;
+    transform: translate(3px, -3px);
+}
+
+.Card img:active {
+    box-shadow: none;
+    transform: translate(0px, 0px);
+}
