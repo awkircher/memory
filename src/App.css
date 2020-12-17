@@ -2,6 +2,8 @@ body {
     -webkit-font-smoothing: subpixel-antialiased;
     background: #f5eddd;
     color: #424242;
+    width: 1250px;
+    margin: 24px;
 }
 
 .hidden {
@@ -23,22 +25,41 @@ body {
 .Header {
     font-family: 'Inconsolata';
     display: flex;
+    justify-content: space-between;
+}
+
+.instructions {
+    width: 664px;
+    align-self: flex-end;
+    padding: 0px;
+    margin: 0px;
+}
+
+.divider {
+    margin: 24px 0px 16px 0px;
 }
 
 .Gameboard {
-    width: 87%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .Score {
+    width: 72px;
+    position: fixed;
+    top: 16px;
+    right: 0px;
     font-family: 'Anton', 'Helvetica Neue Condensed', Arial, Helvetica, sans-serif;
     font-size: 86px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    text-align: center;
+    background-color: #f5eddd;
+    border-top: 4px solid #424242;
+    border-bottom: 4px solid #424242;
+    border-left: 4px solid #424242;
+    padding: 0px 20px 0px 24px;
+    box-sizing: content-box;
 }
 
 .Score .label {
@@ -48,20 +69,26 @@ body {
 }
 
 .Score span {
-    width: 20px;
     height: 8px;
-    display: inline-block;
+    width: 11px;
+    display: block;
+    transform: rotate(90deg);
     background-repeat: no-repeat;
-    background-position-y: bottom;
 }
 
 .Score #leftarrow {
     background-image: url("./images/arrowleft.svg");
+    position: relative;
+    left: 32px;
+    bottom: 16px;
 }
 
 .Score #rightarrow {
     background-image: url("./images/arrowright.svg");
     background-position-x: right;
+    position: relative;
+    left: 32px;
+    top: 16px;
 }
 
 .Card {
