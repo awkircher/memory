@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/memory/static/css/main.c3c0a82e.chunk.css",
-    "main.js": "/memory/static/js/main.3bff3795.chunk.js",
-    "main.js.map": "/memory/static/js/main.3bff3795.chunk.js.map",
+    "main.js": "/memory/static/js/main.c6a60c0a.chunk.js",
+    "main.js.map": "/memory/static/js/main.c6a60c0a.chunk.js.map",
     "runtime-main.js": "/memory/static/js/runtime-main.ed14ce24.js",
     "runtime-main.js.map": "/memory/static/js/runtime-main.ed14ce24.js.map",
     "static/js/2.23ae1c30.chunk.js": "/memory/static/js/2.23ae1c30.chunk.js",
@@ -10,12 +10,29 @@
     "index.html": "/memory/index.html",
     "static/css/main.c3c0a82e.chunk.css.map": "/memory/static/css/main.c3c0a82e.chunk.css.map",
     "static/js/2.23ae1c30.chunk.js.LICENSE.txt": "/memory/static/js/2.23ae1c30.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/memory/static/media/arrowright.a93e0b9d.svg"
+    "static/media/alice.ee8ca8e6.svg": "/memory/static/media/alice.ee8ca8e6.svg",
+    "static/media/anticslab.75724f7c.svg": "/memory/static/media/anticslab.75724f7c.svg",
+    "static/media/arbutusslab.7ba7f958.svg": "/memory/static/media/arbutusslab.7ba7f958.svg",
+    "static/media/App.css": "/memory/static/media/arrowright.a93e0b9d.svg",
+    "static/media/bigcaslon.72d3a36d.svg": "/memory/static/media/bigcaslon.72d3a36d.svg",
+    "static/media/biorhyme.5c081e97.svg": "/memory/static/media/biorhyme.5c081e97.svg",
+    "static/media/cormorant.70bb936f.svg": "/memory/static/media/cormorant.70bb936f.svg",
+    "static/media/divider.91b6a99e.svg": "/memory/static/media/divider.91b6a99e.svg",
+    "static/media/ebgaramond.3dcfa385.svg": "/memory/static/media/ebgaramond.3dcfa385.svg",
+    "static/media/firasans.68e80779.svg": "/memory/static/media/firasans.68e80779.svg",
+    "static/media/helveticaneue.793011bf.svg": "/memory/static/media/helveticaneue.793011bf.svg",
+    "static/media/inter.0247ad8f.svg": "/memory/static/media/inter.0247ad8f.svg",
+    "static/media/karla.4f10b853.svg": "/memory/static/media/karla.4f10b853.svg",
+    "static/media/logo.8ff49731.svg": "/memory/static/media/logo.8ff49731.svg",
+    "static/media/lora.a3dcb301.svg": "/memory/static/media/lora.a3dcb301.svg",
+    "static/media/sourceserifpro.af83547c.svg": "/memory/static/media/sourceserifpro.af83547c.svg",
+    "static/media/spectral.9482ef08.svg": "/memory/static/media/spectral.9482ef08.svg",
+    "static/media/worksans.a44627a4.svg": "/memory/static/media/worksans.a44627a4.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.ed14ce24.js",
     "static/js/2.23ae1c30.chunk.js",
     "static/css/main.c3c0a82e.chunk.css",
-    "static/js/main.3bff3795.chunk.js"
+    "static/js/main.c6a60c0a.chunk.js"
   ]
 }
