@@ -1,6 +1,6 @@
 import Data from './Components/Data';
 import Gameboard from './Components/Gameboard';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Header from './Components/Header';
 import Message from './Components/Message'
@@ -41,17 +41,21 @@ function App() {
       const indexInCardsData = cards.findIndex(isCard);
       setClicked([...clicked, cards[indexInCardsData]]);
       setScore(score + 1);
-      if ((score + 1) === 15) {
-        setWin(true);
-      }
     } else {
       setPastScores([...pastScores, score]);
       setTopScore(calculateTopScore())
       setScore(0);
       setClicked([]);
-      setWin(false);
     }
   }
+
+  useEffect(() => {
+    if (score === 15) {
+      setWin(true);
+    } else {
+      setWin(false);
+    }
+  }, [score]);
 
   return (
     <div className="App">
