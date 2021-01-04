@@ -4,6 +4,7 @@ import { useState } from 'react';
 import './App.css';
 import Header from './Components/Header';
 import Message from './Components/Message'
+import divider from './images/divider.svg'
 
 function App() {
   const [clicked, setClicked] = useState([]);
@@ -59,7 +60,7 @@ function App() {
       <Header 
         topScore={topScore}
         score={score} />
-      <img className="divider" src="./images/divider.svg" alt="Divider line" />
+      <img className="divider" src={divider} alt="Divider line" />
       <Gameboard 
         cards={cards}
         handleClick={handleClick} />

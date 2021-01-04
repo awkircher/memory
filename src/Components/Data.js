@@ -1,65 +1,81 @@
+import alice from '../images/alice.svg';
+import anticslab from '../images/anticslab.svg';
+import arbutusslab from '../images/arbutusslab.svg'; 
+import bigcaslon from '../images/bigcaslon.svg';
+import biorhyme from '../images/biorhyme.svg';
+import cormorant from '../images/cormorant.svg';
+import ebgaramond from '../images/ebgaramond.svg';
+import firasans from '../images/firasans.svg';
+import helveticaneue from '../images/helveticaneue.svg';
+import inter from '../images/inter.svg';
+import karla from '../images/karla.svg';
+import lora from '../images/lora.svg';
+import sourceserifpro from '../images/sourceserifpro.svg';
+import spectral from '../images/spectral.svg';
+import worksans from '../images/worksans.svg';
+
 const Data = function() {
     const cards = 
         [
             {
                 id: 1,
-                src: './images/alice.svg'
+                src: alice
             },
             {
                 id: 2,
-                src: './images/anticslab.svg'
+                src: anticslab
             },
             {
                 id: 3,
-                src: './images/arbutusslab.svg'
+                src: arbutusslab
             },
             {
                 id: 4,
-                src: './images/bigcaslon.svg'
+                src: bigcaslon
             },
             {
                 id: 5,
-                src: './images/biorhyme.svg'
+                src: biorhyme
             },
             {
                 id: 6,
-                src: './images/cormorant.svg'
+                src: cormorant
             },
             {
                 id: 7,
-                src: './images/ebgaramond.svg'
+                src: ebgaramond
             },
             {
                 id: 8,
-                src: './images/firasans.svg'
+                src: firasans
             },
             {
                 id: 9,
-                src: './images/helveticaneue.svg'
+                src: helveticaneue
             },
             {
                 id: 10,
-                src: './images/inter.svg'
+                src: inter
             },
             {
                 id: 11,
-                src: './images/karla.svg'
+                src: karla
             },
             {
                 id: 12,
-                src: './images/lora.svg'
+                src: lora
             },
             {
                 id: 13,
-                src: './images/sourceserifpro.svg'
+                src: sourceserifpro
             },
             {
                 id: 14,
-                src: './images/spectral.svg'
+                src: spectral
             },
             {
                 id: 15,
-                src: './images/worksans.svg'
+                src: worksans
             }
         ];
     return cards;
