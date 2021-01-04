@@ -36,10 +36,10 @@ function App() {
 
   const handleCardClick = function(id) {
     const isCard = (card) => card.id === id;
-    const stateIndex = clicked.findIndex(isCard);
-    if (stateIndex === -1) {
-      const dataIndex = cards.findIndex(isCard);
-      setClicked([...clicked, cards[dataIndex]]);
+    const indexInState = clicked.findIndex(isCard);
+    if (indexInState === -1) {
+      const indexInCardsData = cards.findIndex(isCard);
+      setClicked([...clicked, cards[indexInCardsData]]);
       setScore(score + 1);
       if ((score + 1) === 15) {
         setWin(true);
