@@ -34,7 +34,7 @@ function App() {
     return pastScores.reduce(reducer, score);
   }
 
-  const handleClick = function(id) {
+  const handleCardClick = function(id) {
     const isCard = (card) => card.id === id;
     const stateIndex = clicked.findIndex(isCard);
     if (stateIndex === -1) {
@@ -63,7 +63,7 @@ function App() {
       <img className="divider" src={divider} alt="Divider line" />
       <Gameboard 
         cards={cards}
-        handleClick={handleClick} />
+        handleCardClick={handleCardClick} />
     </div>
   );
 }

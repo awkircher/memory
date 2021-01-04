@@ -5,7 +5,7 @@ function Card(props) {
         data-id={props.id} 
         src={props.src} 
         alt="" 
-        onClick={() => props.handleClick(props.id)} />
+        onClick={() => props.handleCardClick(props.id)} />
     </div>
   );
 }
