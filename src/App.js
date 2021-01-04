@@ -7,11 +7,11 @@ import Message from './Components/Message'
 import divider from './images/divider.svg'
 
 function App() {
-  const [clicked, setClicked] = useState([]); //keeps track of every card you've clicked this game
   const [score, setScore] = useState(0);
-  const [pastScores, setPastScores] = useState([]);
-  const [topScore, setTopScore] = useState(0);
-  const [win, setWin] = useState(false);
+  const [clicked, setClicked] = useState([]); //keeps track of every card you've clicked this game
+  const [pastScores, setPastScores] = useState([]); //derived from score at game end
+  const [topScore, setTopScore] = useState(null); //dependent on pastScores
+  const [win, setWin] = useState(false); //dependent on score
 
   const shuffleArray = function(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -20,21 +20,11 @@ function App() {
     }
     return array;
   }
-
-  const cards = shuffleArray(Data()); //Data() returns an array of objects, each with an id property and a src property
   
-  const calculateTopScore = function() {
-    const reducer = (accumulator, currentValue) => {
-      if(accumulator < currentValue) {
-        return currentValue;
-      } else {
-        return accumulator;
-      }
-    };
-    return pastScores.reduce(reducer, score);
-  }
+  //Get a shuffled array of Card objects, each with an id property and a src property
+  const cards = shuffleArray(Data()); 
 
-  //Compares the passed id with the Card id properties already contained in state. 
+  //Compare the passed id with the Card id properties already contained in state. 
   //If there's a match (i.e., you've already clicked this card), then the game ends. 
   //Otherwise, the passed id is compared with all the Card id properties in Data, 
   //and the matching Card object is added to state.
@@ -47,12 +37,12 @@ function App() {
       setScore(score + 1);
     } else { //game over :(
       setPastScores([...pastScores, score]);
-      setTopScore(calculateTopScore());
       setScore(0);
       setClicked([]);
     }
   }
 
+  //determine if there was a win or not
   useEffect(() => {
     if (score === 15) {
       setWin(true);
@@ -61,12 +51,21 @@ function App() {
     }
   }, [score]);
 
+  //get the top score from your past scores, or keep the top score null if there are no past scores
+  useEffect(() => {
+    const topScore = (pastScores.length > 0) ? Math.max(...pastScores) : null;
+    setTopScore(topScore);
+  }, [pastScores])
+
+  //display 0 to the user instead of null
+  const displayValueTopScore = topScore ? topScore : 0;
+
   return (
     <div className="App">
       <Message
         win={win} />
       <Header 
-        topScore={topScore}
+        topScore={displayValueTopScore}
         score={score} />
       <img className="divider" src={divider} alt="Divider line" />
       <Gameboard 
