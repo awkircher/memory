@@ -24,18 +24,19 @@ function App() {
   //Get a shuffled array of Card objects, each with an id property and a src property
   const cards = shuffleArray(Data()); 
 
-  //Compare the passed id with the Card id properties already contained in state. 
-  //If there's a match (i.e., you've already clicked this card), then the game ends. 
-  //Otherwise, the passed id is compared with all the Card id properties in Data, 
-  //and the matching Card object is added to state.
   const handleCardClick = function(id) {
+    //Compare the passed id with the Card id properties already contained in state. 
     const isCard = (card) => card.id === id;
     const indexInState = clicked.findIndex(isCard);
-    if (indexInState === -1) { //keep playing!
+
+    if (indexInState === -1) {
+      //If no match, the passed id is compared with all the Card id properties in Data, 
+      //and the matching Card object is added to state.
       const indexInCardsData = cards.findIndex(isCard);
       setClicked([...clicked, cards[indexInCardsData]]);
       setScore(score + 1);
-    } else { //game over :(
+    } else {
+      //If there's a match (i.e., you've already clicked this card), then the game ends. 
       setPastScores([...pastScores, score]);
       setScore(0);
       setClicked([]);
