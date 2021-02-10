@@ -1,18 +1,15 @@
 import Data from './Components/Data';
 import Gameboard from './Components/Gameboard';
-import { useState, useEffect } from 'react';
+import { useEffect, useReducer } from 'react';
 import './App.css';
 import Header from './Components/Header';
-import Message from './Components/Message'
-import divider from './images/divider.svg'
+import Message from './Components/Message';
+import divider from './images/divider.svg';
+import { init, initialState, reducer } from './reducer';
 
 function App() {
-  const [score, setScore] = useState(0);
-  const [clicked, setClicked] = useState([]); //keeps track of every card you've clicked this game
-  const [pastScores, setPastScores] = useState([]); //derived from score at game end
-  const [topScore, setTopScore] = useState(null); //dependent on pastScores
-  const [win, setWin] = useState(false); //dependent on score
-
+  const [state, dispatch] = useReducer(reducer, initialState, init);
+  
   const shuffleArray = function(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -27,47 +24,32 @@ function App() {
   const handleCardClick = function(id) {
     //Compare the passed id with the Card id properties already contained in state. 
     const isCard = (card) => card.id === id;
-    const indexInState = clicked.findIndex(isCard);
-
+    const indexInState = state.clicked.findIndex(isCard);
     if (indexInState === -1) {
       //If no match, the passed id is compared with all the Card id properties in Data, 
       //and the matching Card object is added to state.
       const indexInCardsData = cards.findIndex(isCard);
-      setClicked([...clicked, cards[indexInCardsData]]);
-      setScore(score + 1);
+      dispatch({type: 'clicked new card', payload: { indexInCardsData, cards }})
     } else {
-      //If there's a match (i.e., you've already clicked this card), then the game ends. 
-      setPastScores([...pastScores, score]);
-      setScore(0);
-      setClicked([]);
+      //If there's a match (i.e., you've already clicked this card), then the game ends.
+      dispatch({type: 'clicked same card twice'});
     }
   }
 
-  //determine if there was a win or not
-  useEffect(() => {
-    if (score === 15) {
-      setWin(true);
-    } else {
-      setWin(false);
-    }
-  }, [score]);
-
   //get the top score from your past scores, or keep the top score null if there are no past scores
-  useEffect(() => {
-    const topScore = (pastScores.length > 0) ? Math.max(...pastScores) : null;
-    setTopScore(topScore);
-  }, [pastScores])
+  const topScore = (state.pastScores.length > 0) ? Math.max(...state.pastScores) : 0;
 
-  //display 0 to the user instead of null
-  const displayValueTopScore = topScore ? topScore : 0;
+  useEffect(() => {
+    dispatch({type: 'check won'})
+  }, [state.score])
 
   return (
     <div className="App">
       <Message
-        win={win} />
+        win={state.win} />
       <Header 
-        topScore={displayValueTopScore}
-        score={score} />
+        topScore={topScore}
+        score={state.score} />
       <img className="divider" src={divider} alt="Divider line" />
       <Gameboard 
         cards={cards}
