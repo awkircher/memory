@@ -1,6 +1,6 @@
-import Card from "./Card";
+import { Card } from "./Card";
 
-function Gameboard(props) {
+export function Gameboard(props) {
     const cards = props.cards;
     const grid = cards.map((item, index) =>
         <Card key={index.toString()} src={item.src} id={item.id} handleCardClick={props.handleCardClick} />
@@ -11,5 +11,3 @@ function Gameboard(props) {
         </div>
     );
 }
-
-export default Gameboard;

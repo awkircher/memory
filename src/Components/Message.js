@@ -1,4 +1,4 @@
-function Message(props) {
+export function Message(props) {
     const win = props.win;
     if (win) {
         return (
@@ -12,5 +12,3 @@ function Message(props) {
         )
     }
 }
-
-export default Message;

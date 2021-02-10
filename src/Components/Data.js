@@ -14,7 +14,7 @@ import sourceserifpro from '../images/sourceserifpro.svg';
 import spectral from '../images/spectral.svg';
 import worksans from '../images/worksans.svg';
 
-const Data = function() {
+export const Data = function() {
     const cards = 
         [
             {
@@ -80,5 +80,3 @@ const Data = function() {
         ];
     return cards;
 }
-
-export default Data;

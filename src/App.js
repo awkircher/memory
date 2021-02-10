@@ -1,13 +1,13 @@
-import Data from './Components/Data';
-import Gameboard from './Components/Gameboard';
+import { Data } from './Components/Data';
+import { Gameboard } from './Components/Gameboard';
 import { useEffect, useReducer } from 'react';
 import './App.css';
-import Header from './Components/Header';
-import Message from './Components/Message';
+import { Header } from './Components/Header';
+import { Message } from './Components/Message';
 import divider from './images/divider.svg';
 import { init, initialState, reducer } from './reducer';
 
-function App() {
+export function App() {
   const [state, dispatch] = useReducer(reducer, initialState, init);
   
   const shuffleArray = function(array) {
@@ -57,5 +57,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

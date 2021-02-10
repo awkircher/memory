@@ -1,7 +1,7 @@
-import Score from './Score'
+import { Score } from './Score'
 import logo from '../images/logo.svg'
 
-function Header(props) {
+export function Header(props) {
   return (
     <div className="Header">
       <img className="logo" src={logo} alt="Memory logo"/>
@@ -14,5 +14,3 @@ function Header(props) {
     </div>
   );
 }
-
-export default Header;
