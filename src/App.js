@@ -1,8 +1,8 @@
 import { Data } from './Models/Data';
-import { Gameboard } from './Components/Gameboard';
+import { Gameboard } from './Components/Gameboard/Gameboard';
 import { useEffect, useReducer } from 'react';
 import './App.css';
-import { Header } from './Components/Header';
+import { Header } from './Components/Header/Header';
 import { Message } from './Components/Message';
 import divider from './images/divider.svg';
 import { init, initialState, reducer } from './reducer';
