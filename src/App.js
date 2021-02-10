@@ -19,7 +19,7 @@ export function App() {
   }
   
   //Get a shuffled array of Card objects, each with an id property and a src property
-  const cards = shuffleArray(Data()); 
+  const cards = shuffleArray(Data); 
 
   const handleCardClick = function(id) {
     //Compare the passed id with the Card id properties already contained in state. 

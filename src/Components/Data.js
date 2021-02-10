@@ -14,69 +14,65 @@ import sourceserifpro from '../images/sourceserifpro.svg';
 import spectral from '../images/spectral.svg';
 import worksans from '../images/worksans.svg';
 
-export const Data = function() {
-    const cards = 
-        [
-            {
-                id: 1,
-                src: alice
-            },
-            {
-                id: 2,
-                src: anticslab
-            },
-            {
-                id: 3,
-                src: arbutusslab
-            },
-            {
-                id: 4,
-                src: bigcaslon
-            },
-            {
-                id: 5,
-                src: biorhyme
-            },
-            {
-                id: 6,
-                src: cormorant
-            },
-            {
-                id: 7,
-                src: ebgaramond
-            },
-            {
-                id: 8,
-                src: firasans
-            },
-            {
-                id: 9,
-                src: helveticaneue
-            },
-            {
-                id: 10,
-                src: inter
-            },
-            {
-                id: 11,
-                src: karla
-            },
-            {
-                id: 12,
-                src: lora
-            },
-            {
-                id: 13,
-                src: sourceserifpro
-            },
-            {
-                id: 14,
-                src: spectral
-            },
-            {
-                id: 15,
-                src: worksans
-            }
-        ];
-    return cards;
-}
+export const Data = [
+        {
+            id: 1,
+            src: alice
+        },
+        {
+            id: 2,
+            src: anticslab
+        },
+        {
+            id: 3,
+            src: arbutusslab
+        },
+        {
+            id: 4,
+            src: bigcaslon
+        },
+        {
+            id: 5,
+            src: biorhyme
+        },
+        {
+            id: 6,
+            src: cormorant
+        },
+        {
+            id: 7,
+            src: ebgaramond
+        },
+        {
+            id: 8,
+            src: firasans
+        },
+        {
+            id: 9,
+            src: helveticaneue
+        },
+        {
+            id: 10,
+            src: inter
+        },
+        {
+            id: 11,
+            src: karla
+        },
+        {
+            id: 12,
+            src: lora
+        },
+        {
+            id: 13,
+            src: sourceserifpro
+        },
+        {
+            id: 14,
+            src: spectral
+        },
+        {
+            id: 15,
+            src: worksans
+        }
+    ];
