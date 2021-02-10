@@ -1,4 +1,4 @@
-import { Data } from './Components/Data';
+import { Data } from './Models/Data';
 import { Gameboard } from './Components/Gameboard';
 import { useEffect, useReducer } from 'react';
 import './App.css';
@@ -29,7 +29,8 @@ export function App() {
       //If no match, the passed id is compared with all the Card id properties in Data, 
       //and the matching Card object is added to state.
       const indexInCardsData = cards.findIndex(isCard);
-      dispatch({type: 'clicked new card', payload: { indexInCardsData, cards }})
+      const cardToAdd = cards[indexInCardsData]
+      dispatch({type: 'clicked new card', payload: cardToAdd})
     } else {
       //If there's a match (i.e., you've already clicked this card), then the game ends.
       dispatch({type: 'clicked same card twice'});
@@ -40,8 +41,10 @@ export function App() {
     dispatch({type: 'check won'})
   }, [state.score])
 
-  //get the top score from your past scores, or keep the top score null if there are no past scores
+  //Get the top score from your past scores, or keep the top score 0 if there are no past scores
   const topScore = (state.pastScores.length > 0) ? Math.max(...state.pastScores) : 0;
+  
+  //Set the visibility of a 'game won' message and its content.
   const messageVisibility = state.win;
   const message = (state.win) ? 'You won!' : null;
 

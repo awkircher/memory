@@ -14,8 +14,8 @@ export function reducer(state, action) {
         case 'clicked new card':
             //update clicked array 
             //update score to new length of clicked array;
-            const updatedClicked = [...state.clicked, action.payload.cards[action.payload.indexInCardsData]]
-            const updatedScore = state.clicked.length + 1;
+            const updatedClicked = [...state.clicked, action.payload]
+            const updatedScore = state.score + 1;
             return {
                 score: updatedScore,
                 clicked: updatedClicked,
@@ -23,7 +23,7 @@ export function reducer(state, action) {
                 win: state.win
             };
         case 'clicked same card twice':
-            const updatedPastScores = [...state.pastScores, state.clicked.length];
+            const updatedPastScores = [...state.pastScores, state.score];
             const resetClicked = [];
             const resetScore = resetClicked.length;
             return {
