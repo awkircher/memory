@@ -36,17 +36,20 @@ export function App() {
     }
   }
 
-  //get the top score from your past scores, or keep the top score null if there are no past scores
-  const topScore = (state.pastScores.length > 0) ? Math.max(...state.pastScores) : 0;
-
   useEffect(() => {
     dispatch({type: 'check won'})
   }, [state.score])
 
+  //get the top score from your past scores, or keep the top score null if there are no past scores
+  const topScore = (state.pastScores.length > 0) ? Math.max(...state.pastScores) : 0;
+  const messageVisibility = state.win;
+  const message = (state.win) ? 'You won!' : null;
+
   return (
     <div className="App">
       <Message
-        win={state.win} />
+        message={message}
+        isVisible={messageVisibility} />
       <Header 
         topScore={topScore}
         score={state.score} />
