@@ -1,9 +1,8 @@
-function Message(props) {
-    const win = props.win;
-    if (win) {
+export function Message(props) {
+    if (props.isVisible) {
         return (
             <div className="Message">
-                {"You won!"}
+                {props.message}
             </div>
         )   
     } else {
@@ -12,5 +11,3 @@ function Message(props) {
         )
     }
 }
-
-export default Message;

@@ -1,4 +1,4 @@
-function Score(props) {
+export function Score(props) {
     return (
         <div className="Score">
             {props.score}
@@ -14,5 +14,3 @@ function Score(props) {
         </div>
     )
 }
-
-export default Score;
